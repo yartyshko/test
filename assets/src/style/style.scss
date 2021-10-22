@@ -1,0 +1,54 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body{
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  color: #000;
+}
+ol, ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.row{
+  max-width: 1320px;
+  margin: 0 auto;
+}
+.iti{
+  display: block;
+  margin-bottom: 20px;
+  &__selected-flag{
+    padding: 0px 22px 0 19px;
+  }
+  &__arrow{
+    margin-left: 10px;
+    width: 5px;
+    height: 5px;
+    border-bottom: 2px solid rgba(8, 8, 8, 0.4);
+    border-left: 2px solid rgba(8, 8, 8, 0.4);
+    border-top: none;
+    border-right: none;
+    transform: rotate(315deg)
+  }
+  &__arrow--up{
+    transform: rotate(135deg)
+  }
+}
+.iti--separate-dial-code .iti__selected-dial-code{
+  margin-left: 9px;
+  font-size: 14px;
+  font-weight: 500;
+}
+.iti__flag {
+  background-image: url("../img/flags/flags.png");
+}
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .iti__flag {
+    background-image: url("../img/flags/flags@2x.png");
+  }
+}

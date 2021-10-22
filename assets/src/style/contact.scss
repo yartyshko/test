@@ -1,0 +1,107 @@
+.contact-form {
+  padding: 80px 20px 60px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.9) 0%, #FFFFFF 49.87%, rgba(255, 255, 255, 0.9) 100%), url("../img/bg-contact-form.jpg") center/cover no-repeat;
+  @media screen and (min-width: 800px) {
+    padding: 130px 20px 100px;
+  }
+
+  &__title {
+    font-size: 30px;
+    line-height: 37px;
+    margin: 0 0 5px;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+
+  &__subtitle {
+    font-size: 18px;
+    line-height: 22px;
+    text-align: center;
+    margin: 0 0 40px;
+  }
+
+  &__form {
+    max-width: 370px;
+    margin: 0 auto;
+  }
+
+  &__label {
+    display: block;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    margin-bottom: 5px;
+  }
+
+  &__input {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #0B225C;
+    margin-bottom: 20px;
+    color: #080808;
+    font-size: 14px;
+    line-height: 18px;
+    padding: 11px 20px;
+    transition: box-shadow 0.2s;
+    outline: none;
+    &:focus{
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    }
+  }
+
+  &__inputchek {
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+
+  &__labelchek {
+    display: block;
+    margin-bottom: 40px;
+    & > .contact-form__inputchek:checked + .contact-form__fakeinputchek::before{
+      content: '\2714';
+    }
+  }
+  &__fakeinputchek {
+    display: block;
+    position: relative;
+    padding-left: 40px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 20px;
+      height: 20px;
+      border: 1px solid #0B225C;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      cursor: pointer;
+      font-size: 16px;
+      line-height: 20px;
+      text-align: center;
+      transition: box-shadow 0.2s;
+    }
+    &:hover::before{
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+    }
+  }
+  &__submit{
+    width: 100%;
+    height: 60px;
+    background-color: #0B225C;
+    color: #fff;
+    font-size: 14px;
+    line-height: 60px;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.5s;
+    &:hover{
+      background-color: #1b42a3;
+    }
+  }
+}
