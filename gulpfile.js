@@ -5,22 +5,19 @@ var path = {
         html: 'assets/build/',
         js: 'assets/build/js/',
         css: 'assets/build/css/',
-        img: 'assets/build/img/',
-        fonts: 'assets/build/fonts/'
+        img: 'assets/build/img/'
     },
     src: {
         html: 'assets/src/*.html',
         js: 'assets/src/js/main.js',
         style: 'assets/src/style/main.scss',
-        img: 'assets/src/img/**/*.*',
-        fonts: 'assets/src/fonts/**/*.*'
+        img: 'assets/src/img/**/*.*'
     },
     watch: {
         html: 'assets/src/**/*.html',
         js: 'assets/src/js/**/*.js',
         css: 'assets/src/style/**/*.scss',
-        img: 'assets/src/img/**/*.*',
-        fonts: 'assets/src/fonts/**/*.*'
+        img: 'assets/src/img/**/*.*'
     },
     clean: './assets/build/*'
 };
@@ -116,7 +113,6 @@ gulp.task('build',
             'html:build',
             'css:build',
             'js:build',
-            'fonts:build',
             'image:build'
         )
     )
@@ -127,7 +123,6 @@ gulp.task('watch', function () {
     gulp.watch(path.watch.css, gulp.series('css:build'));
     gulp.watch(path.watch.js, gulp.series('js:build'));
     gulp.watch(path.watch.img, gulp.series('image:build'));
-    gulp.watch(path.watch.fonts, gulp.series('fonts:build'));
 });
 
 gulp.task('default', gulp.series(
