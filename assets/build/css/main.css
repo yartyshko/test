@@ -948,8 +948,7 @@ ol, ul {
   margin: 0 auto; }
 
 .iti {
-  display: block;
-  margin-bottom: 20px; }
+  display: block; }
   .iti__selected-flag {
     padding: 0px 22px 0 19px; }
   .iti__arrow {
@@ -963,6 +962,8 @@ ol, ul {
     transform: rotate(315deg); }
   .iti__arrow--up {
     transform: rotate(135deg); }
+  .iti span#phone-error {
+    bottom: -16px; }
 
 .iti--separate-dial-code .iti__selected-dial-code {
   margin-left: 9px;
@@ -1193,7 +1194,7 @@ ol, ul {
     width: 100%;
     height: 40px;
     border: 1px solid #0B225C;
-    margin-bottom: 20px;
+    margin: 0;
     color: #080808;
     font-size: 14px;
     line-height: 18px;
@@ -1201,16 +1202,21 @@ ol, ul {
     transition: box-shadow 0.2s;
     outline: none; }
     .contact-form__input:focus {
-      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); }
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); }
+    .contact-form__input.error {
+      box-shadow: 0 0 0 2px rgba(162, 27, 27, 0.5); }
+    .contact-form__input.valid {
+      box-shadow: 0 0 0 2px rgba(52, 162, 27, 0.5); }
   .contact-form__inputchek {
     position: absolute;
     z-index: -1;
     opacity: 0; }
-  .contact-form__labelchek {
-    display: block;
-    margin-bottom: 40px; }
-    .contact-form__labelchek > .contact-form__inputchek:checked + .contact-form__fakeinputchek::before {
+    .contact-form__inputchek:checked ~ .contact-form__fakeinputchek::before {
       content: '\2714'; }
+    .contact-form__inputchek.error ~ .contact-form__fakeinputchek::before {
+      box-shadow: 0 0 0 2px rgba(162, 27, 27, 0.5); }
+    .contact-form__inputchek.valid ~ .contact-form__fakeinputchek::before {
+      box-shadow: 0 0 0 2px rgba(52, 162, 27, 0.5); }
   .contact-form__fakeinputchek {
     display: block;
     position: relative;
@@ -1233,7 +1239,7 @@ ol, ul {
       text-align: center;
       transition: box-shadow 0.2s; }
     .contact-form__fakeinputchek:hover::before {
-      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25); }
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5); }
   .contact-form__submit {
     width: 100%;
     height: 60px;
@@ -1247,3 +1253,14 @@ ol, ul {
     transition: background-color 0.5s; }
     .contact-form__submit:hover {
       background-color: #1b42a3; }
+  .contact-form__holder-input {
+    position: relative;
+    padding-bottom: 20px; }
+    .contact-form__holder-input span.error {
+      position: absolute;
+      left: 0;
+      bottom: 4px;
+      color: red;
+      font-size: 12px; }
+  .contact-form__holder-checkbox {
+    margin-bottom: 20px; }

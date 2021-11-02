@@ -129,16 +129,22 @@
             <h3 class="contact-form__title">Fill in needed information</h3>
             <p class="contact-form__subtitle">and we will contact you ASAP</p>
             <form class="contact-form__form" action="#">
-                <label class="contact-form__label" for="i1">Name & Last name:</label>
-                <input class="contact-form__input" type="text" id="i1">
-                <label class="contact-form__label" for="phone">Phone number:</label>
-                <input class="contact-form__input" type="text" id="phone">
-                <label class="contact-form__label" for="i3">E-mail:</label>
-                <input class="contact-form__input" type="email" id="i3">
-                <label class="contact-form__labelchek">
-                    <input class="contact-form__inputchek" type="checkbox">
-                    <span class="contact-form__fakeinputchek">I agree with the storage and processing of my data and accept the Site's Privacy Policy.</span>
-                </label>
+                <div class="contact-form__holder-input">
+                    <label class="contact-form__label" for="i1">Name & Last name:</label>
+                    <input class="contact-form__input" type="text" id="i1" name="name">
+                </div>
+                <div class="contact-form__holder-input">
+                    <label class="contact-form__label" for="phone">Phone number:</label>
+                    <input class="contact-form__input" type="text" id="phone" name="phone">
+                </div>
+                <div class="contact-form__holder-input">
+                    <label class="contact-form__label" for="i3">E-mail:</label>
+                    <input class="contact-form__input" type="email" id="i3" name="email">
+                </div>
+                <div class="contact-form__holder-input contact-form__holder-checkbox">
+                    <input class="contact-form__inputchek" id="i4" type="checkbox" name="checkbox">
+                    <label class="contact-form__fakeinputchek" for="i4">I agree with the storage and processing of my data and accept the Site's Privacy Policy.</label>
+                </div>
                 <input class="contact-form__submit" type="submit" value="Send">
             </form>
         </section>

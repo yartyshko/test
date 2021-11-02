@@ -38,7 +38,7 @@
     width: 100%;
     height: 40px;
     border: 1px solid #0B225C;
-    margin-bottom: 20px;
+    margin: 0;
     color: #080808;
     font-size: 14px;
     line-height: 18px;
@@ -46,7 +46,13 @@
     transition: box-shadow 0.2s;
     outline: none;
     &:focus{
-      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
+    }
+    &.error{
+      box-shadow: 0 0 0 2px rgba(162, 27, 27, 0.5);
+    }
+    &.valid{
+      box-shadow: 0 0 0 2px rgba(52, 162, 27, 0.5);
     }
   }
 
@@ -54,13 +60,14 @@
     position: absolute;
     z-index: -1;
     opacity: 0;
-  }
-
-  &__labelchek {
-    display: block;
-    margin-bottom: 40px;
-    & > .contact-form__inputchek:checked + .contact-form__fakeinputchek::before{
+    &:checked ~ .contact-form__fakeinputchek::before{
       content: '\2714';
+    }
+    &.error ~ .contact-form__fakeinputchek::before{
+      box-shadow: 0 0 0 2px rgba(162, 27, 27, 0.5);
+    }
+    &.valid ~ .contact-form__fakeinputchek::before{
+      box-shadow: 0 0 0 2px rgba(52, 162, 27, 0.5);
     }
   }
   &__fakeinputchek {
@@ -86,7 +93,7 @@
       transition: box-shadow 0.2s;
     }
     &:hover::before{
-      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
+      box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.5);
     }
   }
   &__submit{
@@ -103,5 +110,19 @@
     &:hover{
       background-color: #1b42a3;
     }
+  }
+  &__holder-input{
+    position: relative;
+    padding-bottom: 20px;
+    span.error{
+      position: absolute;
+      left: 0;
+      bottom: 4px;
+      color: red;
+      font-size: 12px;
+    }
+  }
+  &__holder-checkbox{
+    margin-bottom: 20px;
   }
 }

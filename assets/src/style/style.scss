@@ -20,7 +20,6 @@ ol, ul{
 }
 .iti{
   display: block;
-  margin-bottom: 20px;
   &__selected-flag{
     padding: 0px 22px 0 19px;
   }
@@ -36,6 +35,9 @@ ol, ul{
   }
   &__arrow--up{
     transform: rotate(135deg)
+  }
+  span#phone-error{
+    bottom: -16px;
   }
 }
 .iti--separate-dial-code .iti__selected-dial-code{
